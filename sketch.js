@@ -14,6 +14,8 @@ var setting;
 var sz;
 
 function setup() {
+  var density = displayDensity();
+  pixelDensity(density);
   mouse = createVector(mouseX, mouseY);
   state = "menu";
   createCanvas(windowWidth, windowHeight);
