@@ -1,27 +1,41 @@
 /***************
  * TODO:
- * Cool Background
  * About Page
  * Works Page
  * Contact Page
- * Canvas Compatability
- * GitHub.io Hosting
 ***************/
 
 
 var state;
 var buttons;
 var mouse;
+var setting;
 
 function setup() {
   mouse = createVector(mouseX, mouseY);
   state = "menu";
   createCanvas(windowWidth, windowHeight);
+  loadBackground();
   buttons = {
     "menu": [new Button(-120, 150, "About", "about"), new Button(0, 190, "Works", "works"), new Button(120, 150, "Contact", "contact")]
   }
   textAlign(CENTER, CENTER);
 }
+
+function loadBackground() {
+  background(0);
+  for (var x = 0; x < width; x += 4) {
+    for (var y = 0; y < height; y += 4) {
+      var n = noise(x/600, y/600);
+      if (n > 0.4) {
+        fill((n - 0.4) * 150);
+        noStroke();
+        rect(x, y, 4, 4);
+      }
+    }
+  }
+  setting = get(0, 0, width, height);
+};
 
 function hexagon(xPos, yPos, size, rot, fillCol, strokeCol, st) {
     angleMode(DEGREES);
@@ -85,7 +99,7 @@ function logo(x, y, s) {
 };
 
 function draw() {
-  background(0);
+  image(setting, 0, 0);
   cursor(ARROW);
   
   push();
@@ -94,8 +108,8 @@ function draw() {
   
   switch (state) {
     case "menu":
-      hexagon(0, 10, 780, 0, color(0), color(255, 255, 255, 50), 6);
-      hexagon(0, 10, 710, 0, color(0), color(255, 255, 255, 50), 6);
+      hexagon(0, 10, 800 + sin(frameCount*5)*20, frameCount/4, color(0, 0, 0, 0), color(255, 255, 255, 50), 10);
+      hexagon(0, 10, 730 + cos(frameCount*5)*20, frameCount/4, color(0, 0, 0, 0), color(255, 255, 255, 50), 10);
       
       logo(0, -60, 1);
       
