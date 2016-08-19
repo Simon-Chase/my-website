@@ -11,6 +11,7 @@ var state;
 var buttons;
 var mouse;
 var setting;
+var sz;
 
 function setup() {
   mouse = createVector(mouseX, mouseY);
@@ -20,6 +21,7 @@ function setup() {
   buttons = {
     "menu": [new Button(-120, 150, "About", "about"), new Button(0, 190, "Works", "works"), new Button(120, 150, "Contact", "contact")]
   }
+  sz = min(width, height)/1000;
   textAlign(CENTER, CENTER);
 }
 
@@ -100,13 +102,13 @@ function logo(x, y, s) {
 };
 
 function draw() {
-  image(setting, 0, 0);
+  image(setting, 0, 0, width, height);
   cursor(ARROW);
   
   push();
   translate(width/2, height/2);
-  mouse.set((mouseX - width/2) / 0.9, (mouseY - height/2) / 0.9);
-  scale(0.9);
+  mouse.set((mouseX - width/2) / sz, (mouseY - height/2) / sz);
+  scale(size);
   
   switch (state) {
     case "menu":
@@ -157,3 +159,8 @@ function Button(x, y, txt, dest) {
     this.col = constrain(this.col, 0, 255);
   }
 };
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  sz = min(width, height)/1000;
+}
