@@ -3,6 +3,7 @@
  * About Page
  * Works Page
  * Contact Page
+ * Credit
 ***************/
 
 
@@ -78,8 +79,8 @@ function logo(x, y, s) {
     rect(0, -153, 30, 5);
     
     triangle(-25, -160, 25, -160, 0, -175);
-    textFont("Avenir");
-    textSize(24);
+    textFont("pt sans");
+    textSize(27);
     textAlign(CENTER, CENTER);
     fill(0);
     text("SIMON", -40, 52);
@@ -104,12 +105,13 @@ function draw() {
   
   push();
   translate(width/2, height/2);
-  mouse.set(mouseX - width/2, mouseY - height/2);
+  mouse.set((mouseX - width/2) / 0.9, (mouseY - height/2) / 0.9);
+  scale(0.9);
   
   switch (state) {
     case "menu":
-      hexagon(0, 10, 800 + sin(frameCount*5)*20, frameCount/4, color(0, 0, 0, 0), color(255, 255, 255, 50), 10);
-      hexagon(0, 10, 730 + cos(frameCount*5)*20, frameCount/4, color(0, 0, 0, 0), color(255, 255, 255, 50), 10);
+      hexagon(0, 10, 780 + sin(frameCount*5)*20, frameCount/4, color(0, 0, 0, 0), color(255, 255, 255, 50), 9);
+      hexagon(0, 10, 720 + cos(frameCount*5)*20, frameCount/4, color(0, 0, 0, 0), color(255, 255, 255, 50), 9);
       
       logo(0, -60, 1);
       
@@ -141,7 +143,7 @@ function Button(x, y, txt, dest) {
     
     fill(this.col);
     noStroke();
-    textFont("futura");
+    textFont("asap");
     textSize(22);
     text(this.txt, this.x, this.y + 1);
     
