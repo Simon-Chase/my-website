@@ -3,7 +3,6 @@
  * About Page
  * Works Page
  * Contact Page
- * Credit
 ***************/
 
 
@@ -40,7 +39,7 @@ function loadBackground() {
     }
   }
   setting = get(0, 0, width, height);
-};
+}
 
 function hexagon(xPos, yPos, size, rot, fillCol, strokeCol, st) {
     angleMode(DEGREES);
@@ -101,7 +100,7 @@ function logo(x, y, s) {
     text("Since 2016", 0, 100);
     
     pop();
-};
+}
 
 function draw() {
   image(setting, 0, 0, width, height);
@@ -124,6 +123,11 @@ function draw() {
       }
     break;
   }
+  
+  fill(255);
+  textFont("asap");
+  textSize(24);
+  text("Logo by Captain", width/2 + 10, height/2 + 20);
   
   pop();
 }
