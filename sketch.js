@@ -23,17 +23,17 @@ function setup() {
   buttons = {
     "menu": [new Button(-120, 150, "About", "about"), new Button(0, 190, "Works", "works"), new Button(120, 150, "Contact", "contact")]
   }
-  sz = min(width, height)/1000;
+  sz = min(width, height)/1050;
   textAlign(CENTER, CENTER);
 }
 
 function loadBackground() {
-  background(0);
+  background(20);
   for (var x = 0; x < width; x += 4) {
     for (var y = 0; y < height; y += 4) {
       var n = noise(x/600, y/600);
       if (n > 0.4) {
-        fill((n - 0.4) * 150);
+        fill(20 + (n - 0.4) * 100);
         noStroke();
         rect(x, y, 4, 4);
       }
@@ -61,8 +61,8 @@ function logo(x, y, s) {
     translate(x, y);
     scale(s);
     
-    hexagon(0, 50, 220, 90, color(0), color(255), 4);
-    hexagon(0, 50, 200, 90, color(0), color(255), 4);
+    hexagon(0, 50, 220, 90, color(0, 0, 0, 0), color(255), 4);
+    hexagon(0, 50, 200, 90, color(0, 0, 0, 0), color(255), 4);
     
     noStroke();
     fill(255);
@@ -110,12 +110,12 @@ function draw() {
   push();
   translate(width/2, height/2);
   mouse.set((mouseX - width/2) / sz, (mouseY - height/2) / sz);
-  scale(size);
+  scale(sz);
   
   switch (state) {
     case "menu":
-      hexagon(0, 10, 780 + sin(frameCount*5)*20, frameCount/4, color(0, 0, 0, 0), color(255, 255, 255, 50), 9);
-      hexagon(0, 10, 720 + cos(frameCount*5)*20, frameCount/4, color(0, 0, 0, 0), color(255, 255, 255, 50), 9);
+      hexagon(0, 10, 780 + sin(frameCount*5)*20, frameCount/4, color(0, 0, 0, 0), color(255, 255, 255, 40), 9);
+      hexagon(0, 10, 720 + cos(frameCount*5)*20, frameCount/4, color(0, 0, 0, 0), color(255, 255, 255, 40), 9);
       
       logo(0, -60, 1);
       
@@ -137,7 +137,7 @@ function Button(x, y, txt, dest) {
   
   this.display = function() {
     noStroke();
-    fill(255 - this.col);
+    fill(255, 255, 255, 255 - this.col);
     ellipse(this.x, this.y, 110, 110);
     
     stroke(255);
@@ -164,5 +164,5 @@ function Button(x, y, txt, dest) {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
-  sz = min(width, height)/1000;
+  sz = min(width, height)/1050;
 }
