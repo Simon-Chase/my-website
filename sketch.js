@@ -10,6 +10,7 @@ var state;
 var buttons;
 var mouse;
 var setting;
+var w = 255;
 var sz;
 
 function setup() {
@@ -117,21 +118,25 @@ function draw() {
       hexagon(0, 10, 720 + cos(frameCount*5)*20, frameCount/4, color(0, 0, 0, 0), color(255, 255, 255, 40), 9);
       
       logo(0, -60, 1);
-      
-      for (var i in buttons.menu) {
-        buttons.menu[i].display();
-      }
     break;
+  }
+  
+  for (var i in buttons[state]) {
+    buttons[state][i].display();
   }
   
   fill(255);
   textFont("asap");
-  noStroke();
   textSize(20);
-  textAlign(CENTER, CENTER);
+  noStroke();
   text("Logo by Karsten Anderson", width/2 - 40, height/2 + 20);
   
+  fill(255, 255, 255, w);
+  rect(-width, -height, width*2, height*2);
+  
   pop();
+  
+  w /= 1.05;
 }
 
 function Button(x, y, txt, dest) {
@@ -166,7 +171,18 @@ function Button(x, y, txt, dest) {
     
     this.col = constrain(this.col, 0, 255);
   }
+  
+  this.onClick = function() {
+    w = 255;
+    state = this.dest;
+  }
 };
+
+function mouseClicked() {
+  for (var i in buttons[state]) {
+    buttons[state][i].onClick();
+  }
+}
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
