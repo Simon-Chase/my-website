@@ -140,6 +140,9 @@ function draw() {
   pop();
   
   w /= 1.1;
+  if (w <= 0) {
+    w = 0;
+  }
 }
 
 function Button(x, y, txt, dest) {
