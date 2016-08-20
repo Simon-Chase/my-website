@@ -137,7 +137,7 @@ function draw() {
   fill(255, 255, 255, w);
   rect(-width, -height, width*2, height*2);
   
-  fill(0);
+  fill(255, 0, 0);
   text(w, 0, 0);
   
   pop();
