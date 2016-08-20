@@ -137,15 +137,10 @@ function draw() {
   fill(255, 255, 255, w);
   rect(-width, -height, width*2, height*2);
   
-  fill(255, 0, 0);
-  text(w, 0, 0);
-  
   pop();
   
+  w = constrain(w, 0, 255);
   w /= 1.1;
-  if (w <= 0) {
-    w = 0;
-  }
 }
 
 function Button(x, y, txt, dest) {
