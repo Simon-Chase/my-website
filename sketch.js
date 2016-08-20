@@ -21,7 +21,10 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   loadBackground();
   buttons = {
-    "menu": [new Button(-120, 150, "About", "about"), new Button(0, 190, "Works", "works"), new Button(120, 150, "Contact", "contact")]
+    "menu": [new Button(-120, 150, "About", "about"), new Button(0, 190, "Works", "works"), new Button(120, 150, "Contact", "contact")],
+    "works": [new Button(-width/2, height/2 - 50, "Back", "menu")],
+    "about": [new Button(-width/2, height/2 - 50, "Back", "menu")],
+    "contact": [new Button(-width/2, height/2 - 50, "Back", "menu")],
   }
   sz = min(width, height)/1050;
   textAlign(CENTER, CENTER);
@@ -136,7 +139,7 @@ function draw() {
   
   pop();
   
-  w /= 1.05;
+  w /= 1.1;
 }
 
 function Button(x, y, txt, dest) {
