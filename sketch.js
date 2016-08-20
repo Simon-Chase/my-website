@@ -126,8 +126,9 @@ function draw() {
   
   fill(255);
   textFont("asap");
+  noStroke();
   textSize(24);
-  text("Logo by Captain", width/2 + 10, height/2 + 20);
+  text("Logo by Karsten Anderson", width/2 - 40, height/2 + 20);
   
   pop();
 }
