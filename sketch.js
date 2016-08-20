@@ -176,8 +176,10 @@ function Button(x, y, txt, dest) {
   }
   
   this.onClick = function() {
-    w = 255;
-    state = this.dest;
+    if (dist(mouse.x, mouse.y, this.x, this.y) < 110/2) {
+      w = 255;
+      state = this.dest;
+    }
   }
 };
 
