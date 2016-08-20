@@ -127,7 +127,7 @@ function draw() {
   fill(255);
   textFont("asap");
   noStroke();
-  textSize(24);
+  textSize(22);
   text("Logo by Karsten Anderson", width/2 - 40, height/2 + 20);
   
   pop();
