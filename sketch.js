@@ -139,7 +139,7 @@ function draw() {
   
   pop();
   
-  w = constrain(w, 0, 255);
+  w = constrain(w, 1, 255);
   w /= 1.1;
 }
 
