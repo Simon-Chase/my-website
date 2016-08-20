@@ -140,7 +140,7 @@ function draw() {
   pop();
   
   w = constrain(w, 1, 255);
-  w /= 1.1;
+  w /= 1.05;
 }
 
 function Button(x, y, txt, dest) {
