@@ -1,8 +1,6 @@
 /***************
  * TODO:
- * About Page
- * Works Page
- * Contact Page
+ * N/A
 ***************/
 
 
@@ -21,8 +19,8 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   loadBackground();
   buttons = {
-    "menu": [new Button(-120, 150, "About", "about"), new Button(0, 190, "Works", "works"), new Button(120, 150, "Contact", "contact")],
-    "works": [new Button(-width/2, height/2 - 50, "Back", "menu")],
+    "menu": [new Button(-120, 150, "About", "about"), new Button(0, 190, "Projects", "projects"), new Button(120, 150, "Contact", "contact")],
+    "projects": [new Button(-width/2, height/2 - 50, "Back", "menu")],
     "about": [new Button(-width/2, height/2 - 50, "Back", "menu")],
     "contact": [new Button(-width/2, height/2 - 50, "Back", "menu")],
   }
@@ -121,6 +119,45 @@ function draw() {
       hexagon(0, 10, 720 + cos(frameCount*5)*20, frameCount/4, color(0, 0, 0, 0), color(255, 255, 255, 40), 9);
       
       logo(0, -60, 1);
+    break;
+    
+    case "about":
+      fill(255);
+      textSize(60);
+      textFont("asap");
+      stroke(255);
+      strokeWeight(2);
+      text("About Me", 0, -210);
+      noStroke();
+      
+      textSize(25);
+      text("My name is Simon Chase, and I'm a young developer based in Ontario, Canada.\n\nI got my love of computer programming while learning math on Khan Academy.\nI was inspired by some of the programs on the \"Hot List\" there, and decided to start learning programming.\nThey have an excellent live editor and great tutorials, which made it easy to get started.\nThe community was very talented and supportive, always there to offer me a helping hand.\n\nI've created numerous games and programs on Khan Academy, under the pseudonym \"KingKhan007\".\nHowever, soon I realized I had to move on, and left the site to pursue my\ndream of becoming a software developer for a small and successful startup.\n\nWelcome to my website, which I ceded entirely in p5.js.\nFeel free to check out some of my games and projects while you're here; enjoy!", 0, 60);
+    break;
+    
+    case "projects":
+      fill(255);
+      textSize(60);
+      textFont("asap");
+      stroke(255);
+      strokeWeight(2);
+      text("My Projects", 0, -140);
+      noStroke();
+      
+      textSize(25);
+      text("Nothing yet; come back later!", 0, 50);
+    break;
+    
+    case "contact":
+      fill(255);
+      textSize(60);
+      textFont("asap");
+      stroke(255);
+      strokeWeight(2);
+      text("Contact Me", 0, -130);
+      noStroke();
+      
+      textSize(25);
+      text("You can contact me via any of the following accounts:\n\nEmail: kingkhan007ka@gmail.com\n\nGitHub: github.com/Simon-Chase\n\nKhan Academy: khanacademy.org/kingkhan007", 0, 50);
     break;
   }
   
