@@ -230,4 +230,10 @@ function mouseClicked() {
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   sz = min(width, height)/1050;
+  buttons = {
+    "menu": [new Button(-120, 150, "About", "about"), new Button(0, 190, "Projects", "projects"), new Button(120, 150, "Contact", "contact")],
+    "projects": [new Button(-(width/2 / sz) + 100, (height/2 / sz) - 100, "Back", "menu")],
+    "about": [new Button(-(width/2 / sz) + 100, (height/2 / sz) - 100, "Back", "menu")],
+    "contact": [new Button(-(width/2 / sz) + 100, (height/2 / sz) - 100, "Back", "menu")],
+  }
 }
