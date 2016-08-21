@@ -18,13 +18,13 @@ function setup() {
   state = "menu";
   createCanvas(windowWidth, windowHeight);
   loadBackground();
+  sz = min(width, height)/1050;
   buttons = {
     "menu": [new Button(-120, 150, "About", "about"), new Button(0, 190, "Projects", "projects"), new Button(120, 150, "Contact", "contact")],
-    "projects": [new Button(-width/2, height/2 - 50, "Back", "menu")],
-    "about": [new Button(-width/2, height/2 - 50, "Back", "menu")],
-    "contact": [new Button(-width/2, height/2 - 50, "Back", "menu")],
+    "projects": [new Button(-(width/2 / sz) + 100, (height/2 / sz) - 100, "Back", "menu")],
+    "about": [new Button(-(width/2 / sz) + 100, (height/2 / sz) - 100, "Back", "menu")],
+    "contact": [new Button(-(width/2 / sz) + 100, (height/2 / sz) - 100, "Back", "menu")],
   }
-  sz = min(width, height)/1050;
   textAlign(CENTER, CENTER);
 }
 
@@ -169,7 +169,7 @@ function draw() {
   textFont("asap");
   textSize(20);
   noStroke();
-  text("Logo by Karsten Anderson", width/2 - 40, height/2 + 20);
+  text("Logo by Karsten Anderson", (width/2 / sz) - 160, (height/2 / sz)  - 50);
   
   fill(255, 255, 255, w);
   rect(-width, -height, width*2, height*2);
@@ -200,7 +200,7 @@ function Button(x, y, txt, dest) {
     fill(this.col);
     noStroke();
     textFont("asap");
-    textSize(22);
+    textSize(21);
     text(this.txt, this.x, this.y + 1);
     
     if (dist(this.x, this.y, mouse.x, mouse.y) < 110/2) {
