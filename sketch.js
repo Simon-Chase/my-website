@@ -171,10 +171,10 @@ function draw() {
   noStroke();
   text("Logo by Karsten Anderson", (width/2 / sz) - 160, (height/2 / sz)  - 50);
   
-  fill(255, 255, 255, w);
-  rect(-width, -height, width*2, height*2);
-  
   pop();
+  
+  fill(255, 255, 255, w);
+  rect(0, 0, width, height);
   
   w = constrain(w, 1, 255);
   w /= 1.05;
