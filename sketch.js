@@ -11,7 +11,7 @@ var setting;
 var w = 255;
 var sz;
 
-function setup() {c
+function setup() {
   var density = displayDensity();
   pixelDensity(density);
   mouse = createVector(mouseX, mouseY);
