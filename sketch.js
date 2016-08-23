@@ -11,7 +11,7 @@ var setting;
 var w = 255;
 var sz;
 
-function setup() {
+function setup() {c
   var density = displayDensity();
   pixelDensity(density);
   mouse = createVector(mouseX, mouseY);
@@ -131,7 +131,7 @@ function draw() {
       noStroke();
       
       textSize(25);
-      text("My name is Simon Chase, and I'm a young developer based in Ontario, Canada.\n\nI got my love of computer programming while learning math on Khan Academy.\nI was inspired by some of the programs on the \"Hot List\" there, and decided to start learning programming.\nThey have an excellent live editor and great tutorials, which made it easy to get started.\nThe community was very talented and supportive, always there to offer me a helping hand.\n\nI've created numerous games and programs on Khan Academy, under the pseudonym \"KingKhan007\".\nHowever, soon I realized I had to move on, and left the site to pursue my\ndream of becoming a software developer for a small and successful startup.\n\nWelcome to my website, which I ceded entirely in p5.js.\nFeel free to check out some of my games and projects while you're here; enjoy!", 0, 60);
+      text("My name is Simon Chase, and I'm a young developer based in Ontario, Canada.\n\nI got my love of computer programming while learning math on Khan Academy.\nI was inspired by some of the programs on the \"Hot List\" there, and decided to start learning programming.\nThey have an excellent live editor and great tutorials, which made it easy to get started.\nThe community was very talented and supportive, always there to offer me a helping hand.\n\nI've created numerous games and programs on Khan Academy, under the pseudonym \"KingKhan007\".\nHowever, soon I realized I had to move on, and left the site to pursue my\ndream of becoming a software developer for a small and successful startup.\n\nWelcome to my website, which I coded entirely in p5.js.\nFeel free to check out some of my games and projects while you're here; enjoy!", 0, 60);
     break;
     
     case "projects":
