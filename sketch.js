@@ -124,7 +124,7 @@ function draw() {
     case "about":
       fill(255);
       textSize(60);
-      textFont("asap");
+      textFont("ubuntu");
       stroke(255);
       strokeWeight(2);
       text("About Me", 0, -210);
@@ -137,7 +137,7 @@ function draw() {
     case "projects":
       fill(255);
       textSize(60);
-      textFont("asap");
+      textFont("ubuntu");
       stroke(255);
       strokeWeight(2);
       text("My Projects", 0, -140);
@@ -150,7 +150,7 @@ function draw() {
     case "contact":
       fill(255);
       textSize(60);
-      textFont("asap");
+      textFont("ubuntu");
       stroke(255);
       strokeWeight(2);
       text("Contact Me", 0, -130);
@@ -166,7 +166,7 @@ function draw() {
   }
   
   fill(255);
-  textFont("asap");
+  textFont("ubuntu");
   textSize(20);
   noStroke();
   text("Logo by Karsten Anderson", (width/2 / sz) - 160, (height/2 / sz)  - 50);
@@ -199,7 +199,7 @@ function Button(x, y, txt, dest) {
     
     fill(this.col);
     noStroke();
-    textFont("asap");
+    textFont("ubuntu");
     textSize(21);
     text(this.txt, this.x, this.y + 1);
     
