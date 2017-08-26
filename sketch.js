@@ -157,7 +157,7 @@ function draw() {
       noStroke();
       
       textSize(25);
-      text("You can contact me via any of the following accounts:\n\nEmail: kingkhan007ka@gmail.com\n\nGitHub: github.com/Simon-Chase\n\nKhan Academy: khanacademy.org/kingkhan007", 0, 50);
+      text("You can contact me via any of the following accounts:\n\nEmail: kingkhan007ka@gmail.com\n\nGitHub: github.com/Simon-Chase\n\nKhan Academy: khanacademy.org/profile/kingkhan007", 0, 50);
     break;
   }
   
